@@ -43,11 +43,11 @@ Scenario: add movie
   Given I am on the RottenPotatoes home page
   And  I follow "Add new movie"
   Then I should be on the new movie page
-  When I fill in "Title" with "Ship of Theseus"
+  When I fill in "Title" with "Test Movie"
   And I select "R" from "Rating"
   And I press "Save Changes"
   Then I should be on the RottenPotatoes home page
-  And I should see "Ship of Theseus was successfully created."
+  And I should see "Test Movie was successfully created."
   
 Scenario: sort movies alphabetically
   Given I am on the RottenPotatoes home page
@@ -57,6 +57,6 @@ Scenario: sort movies alphabetically
 Scenario: sort movies in increasing order of release date
   Given I am on the RottenPotatoes home page
   When I follow "Release Date"
-  Then I should see "THX-1138" before "Alien"
+  Then I should see "Star Wars" before "Blade Runner"
 
 
