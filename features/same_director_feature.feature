@@ -32,31 +32,3 @@ Scenario: can't find similar movies if we don't know director (sad path)
   When  I follow "Find Movies With Same Director"
   Then  I should be on the home page
   And   I should see "'Alien' has no director info"
-
-Scenario: delete movie
-  Given I am on the details page for "Star Wars"
-  And  I press "Delete"
-  Then  I should be on the RottenPotatoes home page 
-  And   I should see "Movie 'Star Wars' deleted."
-  
-Scenario: add movie
-  Given I am on the RottenPotatoes home page
-  And  I follow "Add new movie"
-  Then I should be on the new movie page
-  When I fill in "Title" with "Test Movie"
-  And I select "R" from "Rating"
-  And I press "Save Changes"
-  Then I should be on the RottenPotatoes home page
-  And I should see "Test Movie was successfully created."
-  
-Scenario: sort movies alphabetically
-  Given I am on the RottenPotatoes home page
-  When I follow "Movie Title"
-  Then I should see "Blade Runner" before "THX-1138"
-
-Scenario: sort movies in increasing order of release date
-  Given I am on the RottenPotatoes home page
-  When I follow "Release Date"
-  Then I should see "Star Wars" before "Blade Runner"
-
-

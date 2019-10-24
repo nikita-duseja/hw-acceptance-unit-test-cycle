@@ -67,7 +67,7 @@ class MoviesController < ApplicationController
       flash[:notice] = "'#{@movie.title}' has no director information"
       redirect_to movies_path
     else
-      @movies = Movie.same_directors(@movie.director)
+      @movies = Movie.same_director_movie(@movie.director)
     end
   end
 
